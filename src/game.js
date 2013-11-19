@@ -1,8 +1,6 @@
-var user = require(["./user"]);
+var user = require("./user");
 var player = require("./player");
 var match = require("./match");
-
-
 
 var Game = function() {
 
@@ -19,7 +17,7 @@ var Game = function() {
 	this.findMatch = function() {
 		//TODO
 	};
-
+	//TODO Change to RegisterUser
 	this.registerPlayer = function(p) {
 		//TODO check if user exists in mongo
 		var actualUser = user.createUser(p);
