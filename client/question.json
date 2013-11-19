@@ -1,7 +1,7 @@
 {
 	"questions":[{
 		"id": "1",
-		"image":"img/green_lantern.jpg",
+		"img":"img/green_lantern.jpg",
 		"correct": "Green Lanter",
 		"answers":[
 			{"name":"Green Lanter", "correct": "true"},
@@ -12,7 +12,7 @@
 	},
 	{
 		"id": "2",
-		"image": "img/pulp.jpg",
+		"img": "img/pulp.jpg",
 		"correct": "Pulp Fiction",
 		"answers":[
 			{"name":"Pulp Fiction", "correct":"true"},
@@ -23,7 +23,7 @@
 	},
 	{
 		"id": "3",
-		"image": "img/gladiator.jpg",
+		"img": "img/gladiator.jpg",
 		"correct": "Gladiator",
 		"answers":[
 			{"name":"Gladiator", "correct":"true"},
@@ -34,7 +34,7 @@
 	},
 	{
 		"id": "4",
-		"image": "img/batman.jpg",
+		"img": "img/batman.jpg",
 		"correct": "Gladiator",
 		"answers":[
 			{"name":"Batman", "correct":"true"},
@@ -45,7 +45,7 @@
 	},
 	{
 		"id": "5",
-		"image": "img/inception.jpg",
+		"img": "img/inception.jpg",
 		"correct": "Gladiator",
 		"answers":[
 			{"name":"Inception", "correct":"true"},

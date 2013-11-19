@@ -1,10 +1,10 @@
-var user = require("./user");
+var user = require(["./user"]);
 var player = require("./player");
 var match = require("./match");
 
 
 
-var Game = function(opts) {
+var Game = function() {
 
 
 
@@ -12,7 +12,7 @@ var Game = function(opts) {
 	this.matches = [];
 
 
-	var init = function() {
+	this.init = function() {
 	
 	};
 
@@ -56,7 +56,7 @@ var Game = function(opts) {
 		return this.users;
 	};
 
-	init();
+	this.init();
 
 };
 

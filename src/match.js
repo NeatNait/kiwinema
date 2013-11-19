@@ -1,3 +1,5 @@
+var question = require("./question");
+
 var Match = function() {
 
 
@@ -14,9 +16,7 @@ var Match = function() {
 
 	this.finished = false;
 
-	var init = function() {
-	
-	};
+
 
 	this.findWinner = function() {
 		this.winner = this.players[0];
@@ -78,9 +78,73 @@ var Match = function() {
 
 
 	this.obtainQuestions = function() {
-		//todo
+		var response = {
+	"questions":[{
+		"id": "1",
+		"img":"img/green_lantern.jpg",
+		"correct": "Green Lanter",
+		"answers":[
+			{"name":"Green Lanter", "correct": "true"},
+			{"name":"X-Men", "correct": "false"},
+			{"name":"Inception", "correct": "false"},
+			{"name":"Batman", "correct": "false"}
+		] 
+	},
+	{
+		"id": "2",
+		"img": "img/pulp.jpg",
+		"correct": "Pulp Fiction",
+		"answers":[
+			{"name":"Pulp Fiction", "correct":"true"},
+			{"name":"Kill Bill", "correct":"false"},
+			{"name":"Django", "correct":"false"},
+			{"name":"From Dusk Till Dawn", "correct":"false"}
+		] 
+	},
+	{
+		"id": "3",
+		"img": "img/gladiator.jpg",
+		"correct": "Gladiator",
+		"answers":[
+			{"name":"Gladiator", "correct":"true"},
+			{"name":"Braveheart", "correct":"false"},
+			{"name":"The Patriot", "correct":"false"},
+			{"name":"Matrix", "correct":"false"}
+		]
+	},
+	{
+		"id": "4",
+		"img": "img/batman.jpg",
+		"correct": "Gladiator",
+		"answers":[
+			{"name":"Batman", "correct":"true"},
+			{"name":"Gladiator", "correct":"false"},
+			{"name":"The Patriot", "correct":"false"},
+			{"name":"Inception", "correct":"false"}
+		]
+	},
+	{
+		"id": "5",
+		"img": "img/inception.jpg",
+		"correct": "Gladiator",
+		"answers":[
+			{"name":"Inception", "correct":"true"},
+			{"name":"Memento", "correct":"false"},
+			{"name":"The Patriot", "correct":"false"},
+			{"name":"Batman", "correct":"false"}
+		]
+	}
 
+
+	]};
+	
+		for(var i = 0; i < response.questions.length; i++) {
+			this.questions.push(question.createQuestion(response.questions[i]));
+
+		}
+		//TODO
 		//this.questions = mongo.getQuestions();
+		
 	};
 
 	this.isFinished = function() {
@@ -103,12 +167,17 @@ var Match = function() {
 		return true;
 	};
 
-	init();
+	this.init = function() {
+		this.obtainQuestions();
+	};
+
+	this.init();
 
 };
 
 module.exports.createMatch = createMatch;
 
 function createMatch () {
+
 	return new Match();
 }

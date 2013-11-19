@@ -8,9 +8,15 @@ app.use(express.bodyParser());
 
 app.get('/createUser', function(req, res) {
 
+
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Content-type", "application/json");
+
+
 	kiwinema.registerPlayer(req.query.username);
 	kiwinema.createMatch(req.query.username, req.query.username);
-	res.location('../preparePlay.html');
+	//res.location('../preparePlay.html');
 
 	res.send(kiwinema);
 

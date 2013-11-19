@@ -19,6 +19,8 @@ function KiwinemaCtrl($scope, $http) {
     winner: ""
   };
 
+  $scope.myGame = new Game();
+
   /* Inits */
   $scope.actualRound = 0;
   $scope.toServer.init = new Date();
@@ -33,9 +35,9 @@ function KiwinemaCtrl($scope, $http) {
   };
 
   function Load(){
-    $http({method: 'GET', url: 'http://192.168.1.108:8081/'}).
+    $http({method: 'GET', url: 'http://192.168.1.108:8081/createUser?username=123'}).
     success(function(data, status) {
-        $scope.questions = data.questions;
+        $scope.questions = data.matches[0].questions;
 
         angular.forEach($scope.questions, function(value, key){
           value.answers = value.answers.sort(function() { return Math.round(Math.random());});

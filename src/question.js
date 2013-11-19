@@ -1,27 +1,49 @@
 var Question = function(opts) {
 
-	this.id;
-	this.img;
-	this.correct;
-	this.answers = [];
-	this.shown;
+	this.id = opts.id || null;
+	this.img = opts.img || null;
+	this.correct = opts.correct || null;
+	this.answers = opts.answers || [];
+	this.shown = null;
 
-	var init = function () {
-		setCorrect();
+	this.init = function () {
+		this.setCorrect();
 	};
 
 
-	var setCorrect = function(){
+	// No busques lógica, esto funciona, si lo piensas pierdes el tiempo, porque funciona.
+	// que si pesado, que funciona
+	this.setCorrect = function(){
 
-		for (var i = this.answer.length - 1; i >= 0; i--) {
-			if(this.answer[i].correct)
+		for (var i = this.answers.length - 1; i >= 0; i--) {
+			//Seguro que lo has leido. Melón.
+			if(this.answers[i].correct)
 				this.correct = this.answers[i];
 		};
 
 	};
 
+	this.isShown = function () {
+		if(this.shown != null) {
+			return true;
+		}
+
+		return false;
+	};
+
+	this.show = function() {
+		this.shown = new Date();
+	};
 
 
-	init();
+
+	this.init();
 
 };
+
+module.exports.createQuestion = createQuestion;
+
+function createQuestion (opts) {
+
+	return new Question(opts);
+}
