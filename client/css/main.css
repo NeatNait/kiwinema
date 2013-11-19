@@ -1,0 +1,15 @@
+.correct-false.active{
+	background-color: red;
+}
+
+.correct-true.active{
+	background-color: green;
+}
+
+.question{
+	display:none;
+}
+
+.question.active-round{
+	display: inline-block;
+}

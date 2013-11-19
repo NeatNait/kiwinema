@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>KIWINEMA</title>
+  </head>
+
+  <body>
+    <h2>Kiwinema</h2>
+    <div ng-controller="KiwinemaCtrl">
+        <form ng-submit="loadQuestions()">
+    		<input class="btn" type="submit" value="Load">
+      	</form>
+
+      	<form ng-submit="consoleLog()">
+    		<input class="btn" type="submit" value="Console">
+      	</form>
+
+        <input type="text" ng-model="yourNick" name="nick" value="Intru">
+
+        <a href="#" ng-click="nextRound();">Siguiente</a>
+
+      	<ul ng-repeat="value in questions">
+          <div ng-class="{'active-round' : $index == actualRound }" class="question question-{{$index}}">
+        		<img ng-src="{{value.image}}" height="250" width="150"/>
+        		<li ng-repeat="ans in value.answers">
+                <a href="#" ng-click="clickAnswer($index)" ng-class="{'active' : $index == selectedItem }" class="correct-{{ans.correct}}">{{ans.name}}</a>
+            </li>
+          </div>
+		  </ul>
+    </div>
+  </body>
+</html>
+</html>
